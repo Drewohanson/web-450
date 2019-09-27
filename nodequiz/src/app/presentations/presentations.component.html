@@ -1,0 +1,15 @@
+<div >
+  <h1 mat-dialog-title>{{videoName}}</h1>
+
+  <mat-dialog-content>
+              <video controls autoplay reload="none" style="width:1000px;">
+
+                  </video>
+      </mat-dialog-content>
+      <mat-dialog-actions>
+          <button mat-button mat-dialog-close>Close</button>
+          <div fxFlex></div>
+          <button mat-raised-button color="accent" mat-dialog-close [routerLink]="['/quiz']">Start Quiz</button>
+      </mat-dialog-actions>
+
+  </div>
