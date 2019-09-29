@@ -28,7 +28,6 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { SummaryComponent } from "./components/summary/summary.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AuthLayoutComponent } from "./shared/auth-layout/auth-layout.component";
-import { CookieService } from "ngx-cookie-service";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -62,7 +61,7 @@ import { HttpClientModule } from "@angular/common/http";
     CommonModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false })
   ],
-  providers: [CookieService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}
