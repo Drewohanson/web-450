@@ -19,7 +19,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/nodequiz')));
 const serverPort = 3000;
 
 /************************* Mongoose connection strings go below this line  ***************/
-const connString = 'mongodb+srv://Drewohanson:Ezra0831!@cluster0-7zbdb.mongodb.net/test?retryWrites=true&w=majority';
+const connString = 'mongodb+srv://drewohanson12:Ezra0831!@buwebdev-cluster-1-o4yt9.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.connect(connString, {promiseLibrary:require('bluebird'), useNewUrlParser: true})
         .then(() => console.debug('Connection to the MongoDB instance was successful!'))
