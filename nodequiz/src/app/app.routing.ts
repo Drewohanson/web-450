@@ -1,7 +1,8 @@
 
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
 import { BaseLayoutComponent } from "./shared";
+import { Routes, RouterModule } from "@angular/router";
+
 import { LoginComponent } from "./components/login/login.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SummaryComponent } from "./components/summary/summary.component";
