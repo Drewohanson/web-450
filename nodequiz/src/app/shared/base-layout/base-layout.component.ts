@@ -13,7 +13,4 @@ export class BaseLayoutComponent implements OnInit {
 }
 
 
-navHome() {
-  this.router.navigate(["/landingPage"]);
 
-}

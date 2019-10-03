@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  login() {
     const employeeId = this.form.controls["employeeId"].value;
 
     this.http.get("/api/employees/" + employeeId).subscribe(res => {

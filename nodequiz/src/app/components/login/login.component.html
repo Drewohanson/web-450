@@ -3,7 +3,7 @@
   <mat-card class="mat-elevation-z8">
       <mat-card-title>Please enter Employee ID</mat-card-title>
       <mat-card-content>
-          <form [formGroup]="form" (ngSubmit)="login(); form.reset();" #loginForm>
+          <form [formGroup]="form" (ngLogin)="login(); form.reset();" #loginForm>
               <mat-card style="width: 50%; margin: 0 auto;">
                   <mat-card-content fxLayout="column" fxLayoutGap="10px">
 
