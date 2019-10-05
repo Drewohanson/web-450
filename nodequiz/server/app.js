@@ -26,9 +26,27 @@ mongoose.connect(connString, {promiseLibrary:require('bluebird'), useNewUrlParse
 
 /************************* API routes go below this line ********************/
 
+/********************** Employee API Routes ********************************/
+app.post('/api/employees', function(req, res, next) {
+  const employee = {
+    employeeId: req.body.employeeId,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname
+  };
+
+  Employee.create(employee, function(err, employees) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(employees);
+      res.json(employees);
+    }
+  });
+});
 
 // Get employee by id
-app.get("/api/employees/:id", function(req, res, next) {
+app.get("/api/employee/:id", function(req, res, next) {
   Employee.findOne({ employeeId: req.params.id }, function(err, employee) {
     if (err) {
       console.log(err);
@@ -40,7 +58,53 @@ app.get("/api/employees/:id", function(req, res, next) {
   });
 });
 
+/********************** Quiz API Routes ********************************/
 
+//Create Quiz
+app.post('/api/quizzes', function(req, res, next) {
+  const quiz = {
+    quizId: req.body.employeeId,
+    quizName: req.body.quizName,
+    quizDescription: req.body.quizDescription,
+    cumulativeScore: req.body.cumulativeScore
+  };
+
+  Quiz.create(quiz, function(err, quizzes) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(quizzes);
+      res.json(quizzes);
+    }
+  });
+});
+
+//Get all Quizzes
+app.get('/api/quizzes/all', function(req, res, next) {
+  Quiz.find(function(err, quizzes) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }  else {
+      console.log(quizzes);
+      res.json(quizzes);
+    }
+  })
+});
+
+//Get Quiz by Id
+app.get('/api/quizzes/:id', function(req, res, next) {
+  Quiz.findOne({'quizId': req.params.id}, function(err, quiz) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }  else {
+      console.log(quiz);
+      res.json(quiz);
+    }
+  })
+});
 
 /**
  * Creates an express server and listens on port 3000

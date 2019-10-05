@@ -3,42 +3,44 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { AppRoutes } from "./app.routing";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from "./app.component";
 import { BaseLayoutComponent } from "./shared";
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { SummaryComponent } from './components/summary/summary.component';
 import { LoginComponent } from "./components/login/login.component";
-import { TopicSelectionComponent } from "./components/topic-selection/topic-selection.component";
+import { PresentationComponent } from './components/presentation/presentation.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './shared/guards/auth-guard';
 
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatMenuModule,
-  MatCheckboxModule
-} from "@angular/material";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { CommonModule } from "@angular/common";
-import { MatDialogModule } from "@angular/material/dialog";
-import { SummaryComponent } from "./components/summary/summary.component";
-import { NotFoundComponent } from "./components/not-found/not-found.component";
-import { HttpClientModule } from "@angular/common/http";
+
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
     AppComponent,
     BaseLayoutComponent,
-    LoginComponent,
-    TopicSelectionComponent,
     SummaryComponent,
+    LoginComponent,
     NotFoundComponent,
+    AuthLayoutComponent,
+    PresentationComponent,
+    QuizComponent
   ],
-  imports: [
-    BrowserModule,
+ imports: [
+  BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     BrowserAnimationsModule,
@@ -46,19 +48,19 @@ import { HttpClientModule } from "@angular/common/http";
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
-    MatCheckboxModule,
-    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    CommonModule,
+    CarouselModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false })
   ],
-
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

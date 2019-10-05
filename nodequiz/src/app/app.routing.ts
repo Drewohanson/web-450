@@ -6,7 +6,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SummaryComponent } from "./components/summary/summary.component";
-import { TopicSelectionComponent } from "./components/topic-selection/topic-selection.component";
+import { QuizComponent } from "./components/quiz/quiz.component";
+import { PresentationComponent } from "./components/presentation/presentation.component";
 
 export const AppRoutes: Routes = [
   {
@@ -15,7 +16,9 @@ export const AppRoutes: Routes = [
     children: [
       { path: "", component: LoginComponent },
       { path: "login", component: LoginComponent },
-      { path: "not-found", component: NotFoundComponent }
+      { path: "not-found", component: NotFoundComponent },
+      { path: "presentation", component: PresentationComponent },
+      { path: "quiz", component: QuizComponent }
     ]
   },
   {
@@ -24,7 +27,7 @@ export const AppRoutes: Routes = [
     children: [
       {
         path: "",
-        component: TopicSelectionComponent,
+        component: QuizComponent,
 
       },
       {
