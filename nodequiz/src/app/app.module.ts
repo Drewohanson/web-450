@@ -5,7 +5,6 @@ import { RouterModule } from "@angular/router";
 import { AppRoutes } from "./app.routing";
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from "./app.component";
 import { BaseLayoutComponent } from "./shared";
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
@@ -16,13 +15,16 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './shared/guards/auth-guard';
-
-
+import { MatDialogModule } from "@angular/material/dialog";
+import { CommonModule } from "@angular/common";
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatRadioModule} from '@angular/material';
+import {MatSidenavModule} from '@angular/material';
+import {MatCheckboxModule} from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
@@ -41,19 +43,25 @@ import { CarouselModule } from 'primeng/carousel';
   ],
  imports: [
   BrowserModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatMenuModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    HttpClientModule,
+  BrowserModule,
+  BrowserAnimationsModule,
+  MatButtonModule,
+  BrowserAnimationsModule,
+  MatIconModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatRadioModule,
+  FormsModule,
+  ReactiveFormsModule,
+  FlexLayoutModule,
+  HttpClientModule,
+  CommonModule,
     CarouselModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false })
   ],
