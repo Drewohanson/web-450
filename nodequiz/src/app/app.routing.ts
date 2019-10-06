@@ -2,7 +2,8 @@
 import { NgModule } from "@angular/core";
 import { BaseLayoutComponent } from "./shared";
 import { Routes, RouterModule } from "@angular/router";
-
+import { AuthLayoutComponent } from "./shared/auth-layout/auth-layout.component";
+import { AuthGuard } from "./shared/guards/auth-guard";
 import { LoginComponent } from "./components/login/login.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SummaryComponent } from "./components/summary/summary.component";
@@ -26,14 +27,19 @@ export const AppRoutes: Routes = [
     component: BaseLayoutComponent,
     children: [
       {
-        path: "",
+        path: "presentation/:id",
+        component: PresentationComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: "quiz/:id",
         component: QuizComponent,
-
+        canActivate: [AuthGuard]
       },
       {
         path: "summary",
         component: SummaryComponent,
-
+        canActivate: [AuthGuard]
       }
     ]
   },

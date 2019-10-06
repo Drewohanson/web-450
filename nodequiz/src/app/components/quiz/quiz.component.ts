@@ -23,7 +23,7 @@ export class QuizComponent implements OnInit {
         this.quizBody = res;
         console.log(this.quizBody);
       } else {
-        this.errorMessage = "We encountered an error retrieving your quiz";
+        this.errorMessage = "An error occured retrieving your quiz";
       }
     });
   }
