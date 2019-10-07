@@ -47,13 +47,13 @@ app.post('/api/employees', function(req, res, next) {
 
 // Get employee by id
 app.get("/api/employees/:id", function(req, res, next) {
-  Employee.findOne({ employeeId: req.params.id }, function(err, employee) {
+  Employee.findOne({ employeeId: req.params.id }, function(err, employees) {
     if (err) {
       console.log(err);
       return next(err);
     } else {
-      console.log(employee);
-      res.json(employee);
+      console.log(employees);
+      res.json(employees);
     }
   });
 });

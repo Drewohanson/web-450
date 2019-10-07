@@ -18,8 +18,8 @@ export const AppRoutes: Routes = [
       { path: "", component: LoginComponent },
       { path: "login", component: LoginComponent },
       { path: "not-found", component: NotFoundComponent },
-      { path: "presentation", component: PresentationComponent },
-      { path: "quiz", component: QuizComponent }
+     //{ path: "presentation", component: PresentationComponent },
+     // { path: "quiz", component: QuizComponent }
     ]
   },
   {
@@ -45,9 +45,10 @@ export const AppRoutes: Routes = [
   },
   { path: "**", redirectTo: "/session/not-found" }
 ];
-
+/*
 @NgModule({
   imports: [RouterModule.forRoot(AppRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+*/
