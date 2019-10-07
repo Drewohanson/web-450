@@ -9,13 +9,16 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SummaryComponent } from "./components/summary/summary.component";
 import { QuizComponent } from "./components/quiz/quiz.component";
 import { PresentationComponent } from "./components/presentation/presentation.component";
+import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selection";
 
 export const AppRoutes: Routes = [
   {
     path: "session",
 
+    component: AuthLayoutComponent,
+
     children: [
-      { path: "", component: LoginComponent },
+      { path: "",  },
       { path: "login", component: LoginComponent },
       { path: "not-found", component: NotFoundComponent },
      //{ path: "presentation", component: PresentationComponent },
@@ -26,6 +29,11 @@ export const AppRoutes: Routes = [
     path: "home",
     component: BaseLayoutComponent,
     children: [
+      {
+        path: "quiz-selection",
+        component: QuizSelectionComponent,
+        canActivate: [AuthGuard],
+      },
       {
         path: "presentation/:id",
         component: PresentationComponent,

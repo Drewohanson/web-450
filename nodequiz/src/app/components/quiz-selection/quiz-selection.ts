@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './quiz-selection.component.html',
   styleUrls: ['./quiz-selection.component.css']
 })
-export class QuizComponent implements OnInit {
+export class QuizSelectionComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient) { }
   errorMessage: string;
