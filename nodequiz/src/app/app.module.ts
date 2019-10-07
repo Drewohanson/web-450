@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { AppRoutes } from "./app.routing";
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from "./app.component";
 import { BaseLayoutComponent } from "./shared";
@@ -65,10 +64,7 @@ import { CarouselModule } from 'primeng/carousel';
     CarouselModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false })
   ],
-  providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-    AuthGuard
-  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}

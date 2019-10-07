@@ -1,9 +1,9 @@
 
 small {
-  color: teal;
+  color: red;
 }
 .result-msg {
   text-align: center;
-  color: rgb(6, 59, 102);
+  color: steelblue;
   font-weight: bold;
 }

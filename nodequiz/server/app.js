@@ -58,6 +58,18 @@ app.get("/api/employee/:id", function(req, res, next) {
   });
 });
 
+app.get("/api/employee", function(req, res, next) {
+  Employee.find({}, function(err, employee) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(employee);
+      res.json(employee);
+    }
+  });
+});
+
 /********************** Quiz API Routes ********************************/
 
 //Create Quiz
