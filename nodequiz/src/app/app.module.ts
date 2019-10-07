@@ -28,7 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { CarouselModule } from 'primeng/carousel';
-import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selection";
+import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selection.component";
 
 @NgModule({
   declarations: [

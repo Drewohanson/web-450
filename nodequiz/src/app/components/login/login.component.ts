@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -13,11 +14,7 @@ export class LoginComponent implements OnInit {
   userLogin: string;
   form: FormGroup;
 
-  constructor(
-    private router: Router,
-    private fb: FormBuilder,
-    private http: HttpClient
-  ) {}
+  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.form = this.fb.group({
