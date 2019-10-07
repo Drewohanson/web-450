@@ -1,0 +1,10 @@
+<div class="container">
+  <mat-card color="accent" class="form">
+    <mat-card-content class="buttonGroup">
+      <h2>Please select your topic:</h2>
+<div *ngFor="let quiz of quizzes">
+  <button fxFlex mat-raised-button color="primary" (click)="presentationPage(quiz.quizId)">View Presentation</button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>

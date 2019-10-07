@@ -6,6 +6,6 @@ var employeeSchema = new Schema({
   firstName: { type: String },
   lastName: {type: String},
 
-});
+})
 
 module.exports = mongoose.model("Employee", employeeSchema);
