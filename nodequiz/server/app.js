@@ -27,26 +27,26 @@ mongoose.connect(connString, {promiseLibrary:require('bluebird'), useNewUrlParse
 /************************* API routes go below this line ********************/
 
 /********************** Employee API Routes ********************************/
-app.post('/api/employee', function(req, res, next) {
+app.post('/api/employees', function(req, res, next) {
   const employee = {
     employeeId: req.body.employeeId,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname
+    firstName: req.body.firstname,
+    lastName: req.body.lastname
   };
 
-  Employee.create(employee, function(err, employee) {
+  Employee.create(employee, function(err, employees) {
     if (err) {
       console.log(err);
       return next(err);
     } else {
-      console.log(employee);
-      res.json(employee);
+      console.log(employees);
+      res.json(employees);
     }
   });
 });
 
 // Get employee by id
-app.get("/api/employee/:id", function(req, res, next) {
+app.get("/api/employees/:id", function(req, res, next) {
   Employee.findOne({ employeeId: req.params.id }, function(err, employee) {
     if (err) {
       console.log(err);
@@ -57,15 +57,15 @@ app.get("/api/employee/:id", function(req, res, next) {
     }
   });
 });
-
-app.get("/api/employee", function(req, res, next) {
-  Employee.find({}, function(err, employee) {
+// Get all employees
+app.get("/api/employees", function(req, res, next) {
+  Employee.find({}, function(err, employees) {
     if (err) {
       console.log(err);
       return next(err);
     } else {
-      console.log(employee);
-      res.json(employee);
+      console.log(employees);
+      res.json(employees);
     }
   });
 });
