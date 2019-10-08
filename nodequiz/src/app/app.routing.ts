@@ -63,20 +63,10 @@ export const AppRoutes: Routes = [
         component: SummaryComponent,
         canActivate: [AuthGuard]
       },
-      {
-        path: "quiz/:id",
-        component: QuizComponent,
-        canActivate: [AuthGuard]
-      }
+
     ]
-  },
+  }
+
+ ];
 
 
-];
-/*
-@NgModule({
-  imports: [RouterModule.forRoot(AppRoutes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}
-*/

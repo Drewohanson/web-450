@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: employee.js
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: employee.js schema file
+======================================
+*/
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

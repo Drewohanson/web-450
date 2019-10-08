@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: quiz.js
+  ; Author: Drew Hanson
+  ; Date: October 02 2019
+  ; Description: quiz.js schema file
+======================================
+*/
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

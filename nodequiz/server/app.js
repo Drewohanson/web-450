@@ -1,3 +1,11 @@
+/*
+=====================================
+  ; Title: app.js
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: app.js for api
+======================================
+*/
 const express = require('express');
 const http = require('http');
 const morgan = require('morgan');

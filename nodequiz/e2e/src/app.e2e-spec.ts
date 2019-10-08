@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: app.e2e-spec.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: app.e2e-spec.ts
+======================================
+*/
+
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
