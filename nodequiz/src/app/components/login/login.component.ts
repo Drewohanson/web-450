@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   userLogin: string;
   form: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private router: Router, private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -33,7 +34,8 @@ export class LoginComponent implements OnInit {
 
     this.http.get("/api/employees/" + employeeId).subscribe(res => {
       if (res) {
-        this.router.navigate(["/home"]);
+        this.cookieService.set('isAuthenticated', 'true', 1);
+        this.router.navigate(["/home/quiz-selection"]);
       } else {
         this.errorMessage = "Invalid Employee ID";
       }

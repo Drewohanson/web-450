@@ -29,6 +29,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { CarouselModule } from 'primeng/carousel';
 import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selection.component";
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,10 @@ import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selecti
     CarouselModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false })
   ],
-
+  providers: [
+    {provide:
+    CookieService,}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
