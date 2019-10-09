@@ -10,17 +10,9 @@ import { QuizComponent } from "./components/quiz/quiz.component";
 import { PresentationComponent } from "./components/presentation/presentation.component";
 import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selection.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+
 export const AppRoutes: Routes = [
-  {
-    path: '',
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: LoginComponent
-      }
-    ]
-  },
+
   {path: 'session',
   component: AuthLayoutComponent,
   children: [
@@ -44,29 +36,32 @@ export const AppRoutes: Routes = [
     component: BaseLayoutComponent,
     children: [
       {
-        path: "quiz-selection",
+        path: "",
         component: QuizSelectionComponent,
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
       },
       {
         path: "presentation/:id",
         component: PresentationComponent,
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
       },
       {
         path: "quiz/:id",
         component: QuizComponent,
-        canActivate: [AuthGuard]
+       // canActivate: [AuthGuard]
       },
       {
         path: "summary",
         component: SummaryComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
       },
 
     ]
   }
 
  ];
+
+
+
 
 
