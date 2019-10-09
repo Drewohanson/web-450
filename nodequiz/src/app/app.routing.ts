@@ -12,56 +12,49 @@ import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selecti
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 
 export const AppRoutes: Routes = [
-
-  {path: 'session',
-  component: AuthLayoutComponent,
-  children: [
-    {
-      path: 'login',
-      component: LoginComponent
-    },
-    {
-      path: 'not-found',
-      component: NotFoundComponent
-    }
-  ]
-},
-{
-  path: '**',
-  redirectTo: 'session/not-found'
-},
-
   {
-    path: "home",
+    path:"",
     component: BaseLayoutComponent,
-    children: [
+    children:[
       {
-        path: "",
+        path:"",
         component: QuizSelectionComponent,
-        //canActivate: [AuthGuard],
+        //canActicate: [AuthGuard],
       },
       {
-        path: "presentation/:id",
+        path:"presentation/:id",
         component: PresentationComponent,
-        //canActivate: [AuthGuard],
+        //canActicate: [AuthGuard],
       },
       {
-        path: "quiz/:id",
+        path:"quiz/:id",
         component: QuizComponent,
-       // canActivate: [AuthGuard]
+        //canActicate: [AuthGuard],
       },
       {
-        path: "summary",
+        path:"summary",
         component: SummaryComponent,
-        //canActivate: [AuthGuard]
+        //canActicate: [AuthGuard],
       },
 
     ]
+  },
+  {
+    path:"session",
+    component:AuthLayoutComponent,
+    children: [
+      {
+        path: "login",
+        component: LoginComponent,
+      },
+      {
+        path: "not-found",
+        component: NotFoundComponent,
+      },
+    ]
+  },
+  {
+    path:"**",
+    redirectTo: "session/not-found"
   }
-
- ];
-
-
-
-
-
+]
