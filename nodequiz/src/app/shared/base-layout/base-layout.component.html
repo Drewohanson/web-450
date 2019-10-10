@@ -1,46 +1,17 @@
 <div>
-  <!-- Page header -->
-  <header>
-    <!-- Navbar -->
-    <mat-toolbar class="menu" role="header" color="primary">
-      <mat-toolbar-row>
-        <button mat-button class="toolbar__icon-button mat-button" (click)="navHome()">
-          <mat-icon>assessment</mat-icon>
-          <span style="margin-left: 5px !important"
-            >NodeQuiz, LLC</span
-          >
-        </button>
 
-        <div fxFlex></div>
-
-        <button
-          mat-icon-button
-          class="toolbar__icon-button"
-          [matMenuTriggerFor]="menu"
-        >
-          <mat-icon>account_circle</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="navHome()">
-            <mat-icon>perm_contact_calendar</mat-icon>
-            <span>Quiz Selection</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>list</mat-icon>
-            <span>Cummulatvie Summary</span>
-          </button>
-          <button (click)="logOut()" mat-menu-item>
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Logout</span>
-          </button>
-        </mat-menu>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <!-- endNavbar -->
-  </header>
 
   <!-- Main page content -->
   <main>
+    <a routerLink="/componenets/summary">
+    Summary
+    </a><br><br>
+    <a routerLink="/quiz-selection">
+     quiz-selection
+    </a><br><br>
+    <div style="width: 100px;">
+    <button fxFlex mat-raised-button color="basic" (click)="logout()">Logout</button>
+    </div>
     <router-outlet></router-outlet>
   </main>
 </div>

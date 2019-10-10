@@ -1,4 +1,11 @@
-
+/*
+=====================================
+  ; Title: app.routing.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: app.routing.ts
+======================================
+*/
 import { NgModule } from "@angular/core";
 import { BaseLayoutComponent } from "./shared";
 import { Routes, RouterModule } from "@angular/router";

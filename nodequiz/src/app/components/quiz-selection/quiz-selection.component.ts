@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: quiz-selection.component.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description:quiz.selection.component.ts
+======================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -29,7 +38,4 @@ export class QuizSelectionComponent implements OnInit {
   presentationPage(id){
     this.router.navigateByUrl('/quiz-selection/presentation/' + id);
   }
-
-
-
 }

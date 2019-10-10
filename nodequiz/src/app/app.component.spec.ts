@@ -1,4 +1,11 @@
-
+/*
+=====================================
+  ; Title: app.component.spec.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: app.component.spec.ts
+======================================
+*/
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';

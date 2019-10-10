@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: presentation.component.spec.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: presentation.component.spec.ts
+======================================
+*/
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PresentationComponent } from './presentation.component';

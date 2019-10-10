@@ -81,7 +81,7 @@ app.get("/api/employees", function(req, res, next) {
 /********************** Quiz API Routes ********************************/
 
 //Create Quiz
-app.post("/api/quiz", function(req, res, next) {
+app.post("/api/quizzes", function(req, res, next) {
   const quiz = {
     quiz_Id: req.body.quiz_Id,
     quiz_Name: req.body.quiz_Name,
@@ -108,30 +108,30 @@ app.post("/api/quiz", function(req, res, next) {
   });
 });
 
-// Get quiz by id
-app.get("/api/quiz/:id", function(req, res, next) {
-  QuizBank.findOne({ quiz_Id: req.params.id }, function(err, quiz) {
+//Get all Quizzes
+app.get('/api/quizzes/all', function(req, res, next) {
+  Quiz.find(function(err, quizzes) {
     if (err) {
       console.log(err);
       return next(err);
-    } else {
-      console.log(quiz);
-      res.json(quiz);
+    }  else {
+      console.log(quizzes);
+      res.json(quizzes);
     }
-  });
+  })
 });
 
-// Get all quizzes
-app.get("/api/quiz", function(req, res, next) {
-  Quiz.find({}, function(err, quiz) {
+//Get Quiz by Id
+app.get('/api/quizzes/:id', function(req, res, next) {
+  Quiz.findOne({'quizId': req.params.id}, function(err, quiz) {
     if (err) {
       console.log(err);
       return next(err);
-    } else {
+    }  else {
       console.log(quiz);
       res.json(quiz);
     }
-  });
+  })
 });
 
 /**
