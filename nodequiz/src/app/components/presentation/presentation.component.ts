@@ -7,12 +7,11 @@
 ======================================
 */
 
-import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PresentationService } from './presentation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-presentation',
@@ -20,39 +19,32 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
   styleUrls: ['./presentation.component.css']
 })
 export class PresentationComponent implements OnInit {
-  quiz: any;
-  urlParamId: string;
-  errorMessage: string;
+  images: any;
+  presentations: any;
+  presentationName: string;
+  quizId: any;
+  quizName: string;
 
-
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router:Router, private location: Location) {
-
-
-    this.urlParamId = route.snapshot.paramMap.get('quizId');
-
-    this.http.get('/api/quizzes/'+this.urlParamId).subscribe(res => {
-      if (res) {
-        return this.quiz = res;
-      } else {
-        return this.errorMessage = "OH NO, I couldn't find the quiz!!!";
-      }
-
+  constructor(private route: ActivatedRoute, private http: HttpClient,
+              private presentationService: PresentationService, private router: Router,) {
+    this.presentationName = route.snapshot.paramMap.get('name');
+    this.presentationService.getPresentations()
+    .subscribe(res => {
+      this.presentations = res;
+      console.log(this.presentations);
+      this.images = this.presentations.filter(p => p.name === this.presentationName)[0].images;
+      console.log(this.images);
     })
-
-
   }
-
-  quizPage(id){
-    this.router.navigateByUrl('/quiz-selection/quiz/' + id);
+  goToQuiz(quizId) {
+    this.quizId = quizId;
+    console.log('quizId');
+    console.log('Quiz: ' + this.quizId);
+    this.router.navigate(['/components/quiz/' + this.quizId]);
   }
-
 
   ngOnInit() {
 
-  }
-
-  backPage(){
-    this.location.back();
   }
 
 }

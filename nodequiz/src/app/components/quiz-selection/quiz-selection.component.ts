@@ -10,7 +10,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-quiz-selection',
@@ -19,23 +19,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuizSelectionComponent implements OnInit {
 
-  constructor(private router: Router,  private http: HttpClient) { }
-  errorMessage: string;
-  quizzes: any;
 
+  presentationName: string;
+
+  constructor(private router: Router, private cookie: CookieService) { }
+
+  goToPresentation(presentationName) {
+    this.presentationName = presentationName;
+    console.log('The presentation name is ' + this.presentationName);
+    this.router.navigate(['/quiz-selection/presentation/' + this.presentationName]);
+  }
   ngOnInit() {
-
-  this.http.get('/api/quiz/all').subscribe(res => {
-    if (res) {
-      return this.quizzes = res;
-    } else {
-      return this.errorMessage = " no quizzes were found!!!";
-    }
-  })
-
-  }//end of ngOnInit
-
-  presentationPage(id){
-    this.router.navigateByUrl('/quiz-selection/presentation/' + id);
   }
 }
