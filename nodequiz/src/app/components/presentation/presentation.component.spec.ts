@@ -6,7 +6,6 @@
   ; Description: presentation.component.spec.ts
 ======================================
 */
-
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PresentationComponent } from './presentation.component';

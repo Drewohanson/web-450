@@ -43,7 +43,7 @@ export class PresentationComponent implements OnInit {
   }
 
   quizPage(id){
-    this.router.navigateByUrl('/dashboard/quiz/' + id);
+    this.router.navigateByUrl('/quiz-selection/quiz/' + id);
   }
 
 
