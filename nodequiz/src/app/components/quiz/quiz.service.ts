@@ -17,9 +17,9 @@ export class QuizService {
 
   constructor(private http: HttpClient, private router: Router) {
   this.quizzes = [
-    { id: 101, name: "html-css" },
-    { id: 102, name: "JavaScript" },
-    { id: 103, name: "Node" }
+    { id: 101, name: "2pizzarule" },
+    { id: 102, name: "API" },
+    { id: 103, name: "RESTfulAPIs" }
   ]
 }
 
