@@ -40,7 +40,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { CarouselModule } from 'primeng/carousel';
-
+import { PresentationService } from './components/presentation/presentation.service';
+import { QuizService } from './components/quiz/quiz.service';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { CarouselModule } from 'primeng/carousel';
     NotFoundComponent,
     AuthLayoutComponent,
     PresentationComponent,
-    QuizComponent
+    QuizComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,7 @@ import { CarouselModule } from 'primeng/carousel';
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     CookieService,
-    AuthGuard
+    AuthGuard, PresentationService, QuizService
   ],
   bootstrap: [AppComponent]
 })

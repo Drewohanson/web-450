@@ -1,12 +1,12 @@
-<div fxLayout="column" *ngIf="images">
-  <mat-card>
+<div fxLayout="column" style="margin-top: 5%; margin-left: 10%; width: 60%;">
+  <mat-card class="mat-elevation-z8">
     <mat-card-title>{{ presentationName }}</mat-card-title>
     <mat-card-content>
-      <p-carousel [value]="images" numVisible="1">
+      <p-carousel [value]="presentation" numVisible="1">
         <ng-template let-item pTemplate="item">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div fxFlex>
-              <img src="./assets/slides/{{ presentationName }}/{{ item.name }}.jpeg" alt="">
+              <img src="./assets/presentation/{{ presentationName }}/{{ item.name }}.jpg" alt="">
             </div>
           </div>
         </ng-template>

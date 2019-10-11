@@ -40,7 +40,7 @@ export class PresentationComponent implements OnInit {
     this.quizId = quizId;
     console.log('quizId');
     console.log('Quiz: ' + this.quizId);
-    this.router.navigate(['/components/quiz/' + this.quizId]);
+    this.router.navigate(['/quiz/:id' + this.quizId]);
   }
 
   ngOnInit() {
