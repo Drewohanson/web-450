@@ -1,7 +1,7 @@
 [
   {
     "quiz_Id": "1003",
-    "presentation":  "RESTful APIs",
+    "presentation":  "RESTfulAPIs",
     "1003": [
       {"name": "slide 1", "image": "3.0.jpg"},
       {"name": "slide 2", "image": "3.1.jpg"},
@@ -19,7 +19,7 @@
   },
   {
     "quiz_Id": "1002",
-    "presentation":  "API Design",
+    "presentation":  "API",
     "1002": [
       {"name": "slide 1", "image": "2.0.jpg"},
       {"name": "slide 2", "image": "2.1.jpg"},
@@ -37,7 +37,7 @@
   },
   {
     "quiz_Id": "1001",
-    "presentation":  "2 pizza rule",
+    "presentation":  "2pizzarule",
     "1001": [
       {"name": "slide 1", "image": "1.0.jpg"},
       {"name": "slide 2", "image": "1.1.jpg"},

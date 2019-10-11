@@ -20,19 +20,19 @@ import { Router } from '@angular/router';
 })
 export class PresentationComponent implements OnInit {
   images: any;
-  presentations: any;
+  presentation: any;
   presentationName: string;
   quizId: any;
   quizName: string;
 
   constructor(private route: ActivatedRoute, private http: HttpClient,
               private presentationService: PresentationService, private router: Router,) {
-    this.presentationName = route.snapshot.paramMap.get('name');
+                this.presentationName = route.snapshot.paramMap.get('id');
     this.presentationService.getPresentations()
     .subscribe(res => {
-      this.presentations = res;
-      console.log(this.presentations);
-      this.images = this.presentations.filter(p => p.name === this.presentationName)[0].images;
+      this.presentation = res;
+      console.log(this.presentation);
+      this.images = this.presentation.filter(p => p.name === this.presentationName)[0].images;
       console.log(this.images);
     })
   }
@@ -40,7 +40,7 @@ export class PresentationComponent implements OnInit {
     this.quizId = quizId;
     console.log('quizId');
     console.log('Quiz: ' + this.quizId);
-    this.router.navigate(['/quiz/:id' + this.quizId]);
+    this.router.navigate(['/quiz/' + this.quizId]);
   }
 
   ngOnInit() {

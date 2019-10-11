@@ -27,7 +27,7 @@ export class QuizSelectionComponent implements OnInit {
   goToPresentation(presentationName) {
     this.presentationName = presentationName;
     console.log('The presentation name is ' + this.presentationName);
-    this.router.navigate(['/presentation/:id' + this.presentationName]);
+    this.router.navigate(['/presentation/' + this.presentationName]);
   }
   ngOnInit() {
   }

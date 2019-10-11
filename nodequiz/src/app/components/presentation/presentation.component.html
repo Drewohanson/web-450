@@ -2,11 +2,11 @@
   <mat-card class="mat-elevation-z8">
     <mat-card-title>{{ presentationName }}</mat-card-title>
     <mat-card-content>
-      <p-carousel [value]="presentation" numVisible="1">
+      <p-carousel [value]="images" numVisible="1">
         <ng-template let-item pTemplate="item">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div fxFlex>
-              <img src="./assets/presentation/{{ presentationName }}/{{ item.name }}.jpg" alt="">
+              <img src="./assets/presentation/{{ presentationName }}/{{ item.image }}" alt="">
             </div>
           </div>
         </ng-template>
