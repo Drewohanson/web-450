@@ -20,9 +20,33 @@ import { Router } from '@angular/router';
 })
 
 export class PresentationComponent implements OnInit {
+images: any;
+presentation:any;
+presentationName:string;
+quizId:any;
+quizName: string;
 
+constructor(private route: ActivatedRoute, private http: HttpClient,
+  private presentationService: PresentationService, private router: Router,) {
 
-  constructor() { }
+    this.presentationName = route.snapshot.paramMap.get('id');
+    this.presentationService.getPresentations()
+    .subscribe(res => {
+      this.presentation = res;
+      console.log(this.presentation);
+      this.images = this.presentation.filter(p => p.name === this.presentationName)[0].images;
+      console.log(this.images);
+    })
+  }
+  goToQuiz(quizId) {
+    this.quizId = quizId;
+    console.log('quizId');
+    console.log('Quiz: ' + this.quizId);
+    this.router.navigate(['/quiz/' + this.quizId]);
+  }
+
+  ngOnInit() {
+
 
  // presentation;
   //APIPresentation;
@@ -78,9 +102,6 @@ export class PresentationComponent implements OnInit {
 
   // }
 
-
-
-  ngOnInit() {
 
   }
 

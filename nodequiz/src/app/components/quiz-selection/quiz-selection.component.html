@@ -10,7 +10,7 @@
       </mat-card-header>
       <img mat-card-image src="../../../assets/images/{{quiz.image}}" alt="Laptop and HTML & CSS book">
       <mat-card-actions>
-        <button mat-flat-button color="accent" routerLink="html-basics">View Presentation</button>
+        <button mat-flat-button color="accent" routerLink="presentation/:Id">View Presentation</button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -21,7 +21,7 @@
       </mat-card-header>
       <img mat-card-image src="../../../assets/presentation/1001/1.0.jpg" alt="Laptop and HTML & CSS book">
       <mat-card-actions>
-        <button mat-flat-button color="accent" routerLink="html-basics">View Presentation</button>
+        <button mat-button (click)="goToPresentation('1001')">2PizzaRule</button>
       </mat-card-actions>
     </mat-card>
 
@@ -31,7 +31,7 @@
     </mat-card-header>
     <img mat-card-image src="../../../assets/presentation/1002/2.0.jpg" alt="Laptop and HTML & CSS book">
     <mat-card-actions>
-      <button mat-flat-button color="accent" routerLink="html-basics">View Presentation</button>
+      <button mat-button (click)="goToPresentation('1002')">API</button>
     </mat-card-actions>
   </mat-card>
 
@@ -41,7 +41,7 @@
     </mat-card-header>
     <img mat-card-image src="../../../assets/presentation/1003/3.0.jpg" alt="Css code on laptop">
     <mat-card-actions>
-      <button mat-flat-button color="accent" routerLink="css-basics">View Presentation</button>
+      <button mat-button (click)="goToPresentation('1003')">RESTfulAPIs</button>
     </mat-card-actions>
   </mat-card>
 </div>

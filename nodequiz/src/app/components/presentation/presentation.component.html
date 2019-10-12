@@ -1,25 +1,11 @@
-<div>
-  <mat-card class="mat-elevation-z8">
-    <mat-card-header>
-      <mat-card-title>
-        2 pizza rule Slideshow
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p-carousel [value]="items" headerText="2 pizza rule" numVisible="1">
-        <ng-template let-item pTemplate="item">
-          <div>
-              <img src="../../../assets/presentation/1001/{{item.image}}">
+<mat-card class="mat-elevation-z8">
+  <mat-card-title>{{ presentationName }}</mat-card-title>
+  <mat-card-content>
+    <p-carousel [value]="images" numVisible="1">
+      <ng-template let-item pTemplate="item">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxFlex>
+            <img src="./assets/presentation/{{ presentationName }}/{{ item.image }}" alt="">
           </div>
-          <div>
-            <h3>{{item.name}}</h3>
-          </div>
-        </ng-template>
-      </p-carousel>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-flat-button color="accent" routerLink="quiz">Take Quiz</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+        </div>
+      </ng-template>
