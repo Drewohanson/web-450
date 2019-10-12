@@ -15,10 +15,6 @@
  })
  export class PresentationService {
 
-     presentationName: string;
-     presentations: any;
-     images: any;
-
  constructor(private http: HttpClient) {
 
    }

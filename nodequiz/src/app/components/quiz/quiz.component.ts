@@ -1,7 +1,17 @@
-
+/*
+; ============================================
+; Title:  quiz.component.ts
+; Author: Drew Hanson
+; Date:    12 Oct 2019
+; Description: NodeQuiz
+;=============================================
+*/
+import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { QuizService } from './quiz.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-quiz',
@@ -9,22 +19,53 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  quizSelection: number;
-  errorMessage: string;
-  quizBody: any;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  quizName: string;
+  quizzes: any;
+  quiz: any;
+  questions: any = [];
+  question: any = [];
+
+  quizId: number;
+  employeeId: number;
+  quizResults: any;
+
+  constructor(private route: ActivatedRoute, private http: HttpClient, private cookieService: CookieService, private dialog: MatDialog,
+    private quizService: QuizService, private router: Router) {
+      this.quizName = route.snapshot.paramMap.get('name');
+      // this.quizId = parseInt(this.route.snapshot.paramMap.get('quizId'), 10);
+      this.employeeId = parseInt(this.cookieService.get('employeeId'), 10);
+      console.log('Running getQuizzes from component');
+      this.quizService.getQuizzes()
+      .subscribe(res => {
+        this.quizzes = res;
+        console.log(this.quizzes);
+        this.questions = this.quizzes.filter(p => p.name === this.quizName)[0].questions;
+        // this.quiz = this.quizzes.filter(q => q.quizId === this.quizId)[0];
+        console.log(this.questions);
+      })
+  }
+
+  goToQuiz(quizName) {
+    this.quizName = quizName;
+    console.log('The quiz name is ' + this.quizName);
+    this.router.navigate(['/quiz/' + this.quizName]);
+  }
+
+  returnToPresentation(quizName) {
+    this.quizName = quizName;
+    this.router.navigate(['/presentation/' + this.quizName]);
+  }
+
+  onSubmit(form) {
+    this.quizResults = form;
+    this.quizResults['employeeId'] = this.employeeId; // add the employeeId to the quizResults object
+    this.quizResults['quizId'] = this.quizId; // add the quizId to the quizResults object
+
+  }
 
   ngOnInit() {
-    this.quizSelection = parseInt(this.route.snapshot.paramMap.get("id"), 10);
 
-    this.http.get("/api/quiz/" + this.quizSelection).subscribe(res => {
-      if (res) {
-        this.quizBody = res;
-        console.log(this.quizBody);
-      } else {
-        this.errorMessage = "An error occured retrieving your quiz";
-      }
-    });
   }
+
 }

@@ -18,6 +18,7 @@ import { PresentationComponent } from "./components/presentation/presentation.co
 import { QuizSelectionComponent } from "./components/quiz-selection/quiz-selection.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 
+
 export const AppRoutes: Routes = [
   {
     path:"",
@@ -39,7 +40,7 @@ export const AppRoutes: Routes = [
         //canActicate: [AuthGuard],
       },
       {
-        path:"summary",
+        path:"summary/:id",
         component: SummaryComponent,
         //canActicate: [AuthGuard],
       },

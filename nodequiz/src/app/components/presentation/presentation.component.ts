@@ -18,30 +18,67 @@ import { Router } from '@angular/router';
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.css']
 })
-export class PresentationComponent implements OnInit {
-  images: any;
-  presentation: any;
-  presentationName: string;
-  quizId: any;
-  quizName: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient,
-              private presentationService: PresentationService, private router: Router,) {
-                this.presentationName = route.snapshot.paramMap.get('id');
-    this.presentationService.getPresentations()
-    .subscribe(res => {
-      this.presentation = res;
-      console.log(this.presentation);
-      this.images = this.presentation.filter(p => p.name === this.presentationName)[0].images;
-      console.log(this.images);
-    })
-  }
-  goToQuiz(quizId) {
-    this.quizId = quizId;
-    console.log('quizId');
-    console.log('Quiz: ' + this.quizId);
-    this.router.navigate(['/quiz/' + this.quizId]);
-  }
+export class PresentationComponent implements OnInit {
+
+
+  constructor() { }
+
+ // presentation;
+  //APIPresentation;
+  //RESTfulPresentation;
+
+
+  //constructor(private router: Router) {
+    //this.presentation = [
+      //{ slide: 'assets/presentation/1.0.jpg' },
+      //{ slide: 'assets/presentation/1.1.jpg' },
+//      { slide: 'assets/presentation/1.2.jpg' },
+  //    { slide: 'assets/presentation/1.3.jpg' },
+    //  { slide: 'assets/presentation/1.4.jpg' },
+     // { slide: 'assets/presentation/1.5.jpg' },
+//      { slide: 'assets/presentation/1.6.jpg' },
+  //    { slide: 'assets/presentation/1.7.jpg' },
+    //  { slide: 'assets/presentation/1.8.jpg' },
+//      { slide: 'assets/presentation/1.9.jpg' },
+  //    { slide: 'assets/presentation/1.10.jpg' },
+
+ // ],
+
+   // this.APIPresentation = [
+     // { slide: 'assets/presentation/2.0.jpg' },
+//      { slide: 'assets/presentation/2.1.jpg' },
+  //    { slide: 'assets/presentation/2.2.jpg' },
+    //  { slide: 'assets/presentation/2.3.jpg' },
+ //     { slide: 'assets/presentation/2.4.jpg' },
+   //   { slide: 'assets/presentation/2.5.jpg' },
+     // { slide: 'assets/presentation/2.6.jpg' },
+//      { slide: 'assets/presentation/2.7.jpg' },
+  //    { slide: 'assets/presentation/2.8.jpg' },
+    //  { slide: 'assets/presentation/2.9.jpg' },
+      //{ slide: 'assets/presentation/2.10.jpg' },
+//      { slide: 'assets/presentation/2.11.jpg' }
+ // ],
+
+  //this.RESTfulPresentation = [
+   // { slide: 'assets/presentation/3.0.jpg' },
+     // { slide: 'assets/presentation/3.1.jpg' },
+     // { slide: 'assets/presentation/3.2.jpg' },
+      //{ slide: 'assets/presentation/3.3.jpg' },
+      //{ slide: 'assets/presentation/3.4.jpg' },
+    //  { slide: 'assets/presentation/3.5.jpg' },
+ //     { slide: 'assets/presentation/3.6.jpg' },
+   //   { slide: 'assets/presentation/3.7.jpg' },
+     // { slide: 'assets/presentation/3.8.jpg' },
+ //     { slide: 'assets/presentation/3.9.jpg' },
+   //   { slide: 'assets/presentation/3.10.jpg' },
+     // { slide: 'assets/presentation/3.11.jpg' }
+
+ // ]
+
+  // }
+
+
 
   ngOnInit() {
 

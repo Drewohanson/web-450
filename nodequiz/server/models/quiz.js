@@ -7,26 +7,22 @@
 ======================================
 */
 
-const mongoose = require("mongoose");
+
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let quizSchema = new Schema({
-  quiz_Id: { type: Schema.Types.ObjectId, ref: "quiz" },
-  quiz_Name: { type: Schema.Types.ObjectId, ref: "quiz" },
-  question: String,
-  quiz_Answers: {
-    answer_1: String,
-    answer_2: String,
-    answer_3: String,
-    answer_4: String,
-    correct_Answer: String
-  }
-});
+const QuizSchema = new Schema({
+    quizId: {type: Number},
+    name: {type: String, required: true},
+    questions: [{
+        questionNumber: {type: Number},
+        questionText: {type: String},
+        answers: [{
+            answerLetter: {type: String},
+            answerText: {type: String},
+            isCorrect: {type: Boolean}
+        }]
+    }]
+})
 
-let quizSchema = new Schema({
-  quiz_Id: Number,
-  quiz_Name: String,
-  quiz_Questions: [quizSchema]
-});
-
-module.exports = mongoose.model("Quiz", quizSchema);
+module.exports = mongoose.model('Quiz', QuizSchema);

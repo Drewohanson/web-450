@@ -83,60 +83,59 @@ app.get("/api/employees", function(req, res, next) {
 //Create Quiz
 app.post("/api/quizzes", function(req, res, next) {
   const quiz = {
-    quiz_Id: req.body.quiz_Id,
-    quiz_Name: req.body.quiz_Name,
-    quiz_Questions: {
-      question: req.body.quiz_Questions.question,
-      quiz_Answers: {
-        answer_1: req.body.quiz_Questions.quiz_Answers.answer_1,
-        answer_2: req.body.quiz_Questions.quiz_Answers.answer_2,
-        answer_3: req.body.quiz_Questions.quiz_Answers.answer_3,
-        answer_4: req.body.quiz_Questions.quiz_Answers.answer_4,
-        correct_Answer: req.body.quiz_Questions.quiz_Answers.correct_Answer
-      }
-    }
-  };
+      quizId: {type: Number},
+      name: {type: String, required: true},
+      questions: [{
+          questionNumber: {type: Number},
+          questionText: {type: String},
+          answers: [{
+              answerLetter: {type: String},
+              answerText: {type: String},
+              isCorrect: {type: Boolean}
+            }]
+        }]
+    };
 
-  Quiz.create(quiz, function(err, quiz) {
-    if (err) {
-      console.log(err);
-      return next(err);
-    } else {
-      console.log(quiz);
-      res.json(quiz);
-    }
-  });
-});
+            Quiz.create(quiz, function(err, quizzes) {
+              if (err) {
+                console.log(err);
+                return next(err);
+              } else {
+                console.log(quizzes);
+                res.json(quizzes);
+              }
+            });
+          });
 
-//Get all Quizzes
-app.get('/api/quizzes/all', function(req, res, next) {
-  Quiz.find(function(err, quizzes) {
-    if (err) {
-      console.log(err);
-      return next(err);
-    }  else {
-      console.log(quizzes);
-      res.json(quizzes);
-    }
-  })
-});
+          //Get all Quizzes
+          app.get('/api/quizzes/all', function(req, res, next) {
+            Quiz.find(function(err, quizzes) {
+              if (err) {
+                console.log(err);
+                return next(err);
+              }  else {
+                console.log(quizzes);
+                res.json(quizzes);
+              }
+            })
+          });
 
-//Get Quiz by Id
-app.get('/api/quizzes/:id', function(req, res, next) {
-  Quiz.findOne({'quizId': req.params.id}, function(err, quiz) {
-    if (err) {
-      console.log(err);
-      return next(err);
-    }  else {
-      console.log(quiz);
-      res.json(quiz);
-    }
-  })
-});
-
+          //Get Quiz by Id
+          app.get('/api/quizzes/:id', function(req, res, next) {
+            Quiz.findOne({'quizId': req.params.id}, function(err, quiz) {
+              if (err) {
+                console.log(err);
+                return next(err);
+              }  else {
+                console.log(quiz);
+                res.json(quiz);
+              }
+            })
+          });
 /**
  * Creates an express server and listens on port 3000
  */
+
 http.createServer(app).listen(serverPort, function() {
   console.log(`Application started and listing on port: ${serverPort}`);
 });

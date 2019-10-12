@@ -1,0 +1,800 @@
+[
+  {
+      "quizId": 1001,
+      "name": "2PizzaRule",
+      "questions": [
+          {
+              "questionNumber": 1,
+              "questionText": "what is the two pizza rule?",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "a guideline for limiting the number of attendees at a meeting.",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "Everyone eats two pizzas",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "Tuesday Night pizza deal",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "None of the above",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 2,
+              "questionText": "True or False: According to the rule, a meeting should never have so many attendees that they could not all be fed with two pizzas",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 3,
+              "questionText": "who created the two pizza rule?",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "Bill gates",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "Pizza Hut",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "Jeff Bezos",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "Jack Smith",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 4,
+              "questionText": "The goal of the two-pizza rule is to increase productivity ",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "False",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "True",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 5,
+              "questionText": "HiPPO, is an acronym for the highest paid person's opinion,",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "False",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "I don't know",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "HIPPO is and animal",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 6,
+              "questionText": "Groupthink occurs when a large group's need for consensus overrides the judgment of individual group members.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "False",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "True",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 7,
+              "questionText": "According to the rule, how many should be on a team",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "1-2",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "5-10",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "10-15",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "None of the above",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 8,
+              "questionText": "The cheers Rule focuses on build relationships",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "True",
+                      "isCorrect": true
+                  }
+              ]
+          },
+          {
+              "questionNumber": 9,
+              "questionText": "Social loafing happens when team members reduce their effort because they feel less responsible for the output",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "I don't know",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "huh",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 10,
+              "questionText": "the more people you add to a team, the more exponentially easier the work gets.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "true",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "fale",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "sounds good",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "huh",
+                      "isCorrect": false
+                  }
+              ]
+          }
+      ]
+  },
+  {
+      "quizId": 1002,
+      "name": "API",
+      "questions": [
+          {
+              "questionNumber": 1,
+              "questionText": "Step 1:  Identify who is going to be using the system directly. These are the Actors. The main component of use case development is actors. An actor is a specific role played by a system user and represents a category of users that demonstrates similar behaviors when using the system. The actors may be people or computer systems",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "True",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "don't know",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "huh",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 2,
+              "questionText": "Step 2: Pick one of those Actors. To identify a target system’s use case, we identify the system actors. A good starting point is to check the system design and identify who it is supposed to help.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "Don't know",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "huh",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 3,
+              "questionText": "Step 3: Define what that Actor wants to do with the system. Each of these things that the actor wants to do with the system become a Use Case The things that the actors want to do with the system become goals. The goal is the end outcome of the actions of the user. ",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "fale",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "True",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "fale",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 4,
+              "questionText": "Step 4: For each of those Use Cases decide on the most usual course when that Actor is using the system. What normally happens. A use case has one basic course and several alternative courses. The basic course is the simplest course, the one in which a request is delivered without any difficulty.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "fale",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 5,
+              "questionText": "Step 5: Describe that basic course in the description for the use case. The use scenario is written from the user’s perspective in view in easy to understand language. This step is very similar to documenting a process flow",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "True",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 6,
+              "questionText": "Step 6: Once you’re happy with the basic course now consider the alternatives and add those as extending use case. The extensions are written in the same manner as the original use case but they provide alternatives to the simplest path.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "fale",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 7,
+              "questionText": "The 7 Step Design Procedure is a process this allows for the developer to pick out the appropriate design pattern for the type of project/application that they plan to build in the near future.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "fale",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 8,
+              "questionText": "Step 1 of the 7 step design proceedure is:",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "list the semantic descriptors",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "Implementation",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "publication",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "write a profile",
+                      "isCorrect": true
+                  }
+              ]
+          },
+          {
+              "questionNumber": 9,
+              "questionText": "Step 4 of the 7 step design proceedure is:",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "choose a media type",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "publication",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "reconcile Name",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "Drew a state diagram",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 10,
+              "questionText": "step 7 of the 7 step design process is",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "Publication",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "write a profile",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "reconcile name",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "write a state diagram",
+                      "isCorrect": false
+                  }
+              ]
+          }
+      ]
+  },
+  {
+      "quizId": 1003,
+      "name": "RESTfulAPIs",
+      "questions": [
+          {
+              "questionNumber": 1,
+              "questionText": "REST is an architectural style which is based on web standards and the HTTP protocol",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "True",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "False",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "False",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "None of the above",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 2,
+              "questionText": "What does REST stand for?",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "Represent State Transfer",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "Representational State Transfer",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "Representational Stateless Transfer",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "Representational State Transference",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 3,
+              "questionText": "What is a Representation?",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "The state of the computer on which you’re surfing the web",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "The state of the server you are accessing to get information from the web",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "The value of a resource at any given time",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "The transfer of information over the web",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 4,
+              "questionText": "RESTful API should include all the following except",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "Stateless",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "Intuitive",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "Complex",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "Efficient",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 5,
+              "questionText": "A Web service is merely an API wrapped in HTTP.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "fale",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 6,
+              "questionText": "An API always need to be web based.",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "true",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "false",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "maybe",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "I don't know",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 7,
+              "questionText": "An API consists of a complete set of rules and specifications for a software program to follow in order to facilitate interaction. ",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 8,
+              "questionText": "Which of the following is a benefit of REST?",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "It keeps the user interface and server separate from each other so they can evolve and scale independently",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "It is less complex than other means of data transfer",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "It provides the means to obtain and manipulate data in a number of different formats",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "All of the above",
+                      "isCorrect": true
+                  }
+              ]
+          },
+          {
+              "questionNumber": 9,
+              "questionText": "With REST, how is information transferred between the application and the server?",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "HTTP messages",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "HTML messages",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "XML",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "JSON",
+                      "isCorrect": false
+                  }
+              ]
+          },
+          {
+              "questionNumber": 10,
+              "questionText": "A Disadvantages of RESTful APIs is there is no defined standard for building REST based API’s. ",
+              "answers": [
+                  {
+                      "answerLetter": "A",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "B",
+                      "answerText": "true",
+                      "isCorrect": true
+                  },
+                  {
+                      "answerLetter": "C",
+                      "answerText": "false",
+                      "isCorrect": false
+                  },
+                  {
+                      "answerLetter": "D",
+                      "answerText": "false",
+                      "isCorrect": false
+                  }
+              ]
+          }
+      ]
+  }
+]

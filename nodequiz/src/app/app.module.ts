@@ -28,9 +28,11 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './shared/guards/auth-guard';
 import { CookieService } from 'ngx-cookie-service';
+import { ResultsComponent } from "./components/results/results.component";
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
@@ -55,6 +57,7 @@ import { QuizService } from './components/quiz/quiz.service';
     AuthLayoutComponent,
     PresentationComponent,
     QuizComponent,
+    ResultsComponent,
 
   ],
   imports: [
@@ -71,10 +74,12 @@ import { QuizService } from './components/quiz/quiz.service';
     MatButtonToggleModule,
     MatInputModule,
     MatIconModule,
+    MatListModule,
     MatMenuModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     CarouselModule
+
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -1,44 +1,28 @@
-import { Injectable } from '@angular/core';
+/*
+; ============================================
+; Title:  quiz.service.ts
+; Author: Drew Hanson
+; Date:    12 Oct 2019
+; Description: NodeQuiz
+;=============================================
+*/
+
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
+
 export class QuizService {
 
-    quizName: string;
-    employeeId: number;
-    quizId: number;
-    quizResults: any;
-    quizzes: any;
-    questions: string;
-    answers: string;
+quizName: string;
 
-  constructor(private http: HttpClient, private router: Router) {
-  this.quizzes = [
-    { id: 101, name: "2pizzarule" },
-    { id: 102, name: "API" },
-    { id: 103, name: "RESTfulAPIs" }
-  ]
-}
+  constructor(private http: HttpClient) { }
 
   getQuizzes() {
-    return this.http.get('./assets/questions.json');
+    console.log('Running getQuizzes from Service');
+    return this.http.get('/assets/questions.json');
   }
-
-  onSubmit(form){
-    this.quizResults = form;
-    this.quizResults['employeeId'] = this.employeeId; // add the employeeId to the quizResults ojbect
-  }
-
-  /*
-  user : string;
-  goToResults(employeeId) {
-    this.user = employeeId;
-    console.log('user');
-    console.log('Score: ' + this.user);
-    this.router.navigate(['/dashboard/questions/' + this.user]);
-  }*/
 
 }

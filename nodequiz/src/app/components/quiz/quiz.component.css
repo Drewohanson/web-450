@@ -1,12 +1,5 @@
-.container {
-  margin: 15px auto;
-  width: 55%;
-}
 
-.alignCenter {
-  text-align: center;
-}
 
-.colorGrey {
-  background-color: lightgrey;
+input[type="radio"] {
+  vertical-align: top;
 }
