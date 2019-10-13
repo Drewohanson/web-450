@@ -1,91 +1,71 @@
-/*
-=====================================
-  ; Title: app.module.ts
-  ; Author: Drew Hanson
-  ; Date: October 8 2019
-  ; Description: app.module.ts
-======================================
-*/
 
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule} from '@angular/router';
-import { AppRoutes } from './app.routing';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BaseLayoutComponent } from './shared';
-import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
-import { SummaryComponent } from './components/summary/summary.component';
-import { QuizSelectionComponent} from './components/quiz-selection/quiz-selection.component';
 import { LoginComponent } from './components/login/login.component';
-import { PresentationComponent } from './components/presentation/presentation.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { QuizComponent } from './components/quiz/quiz.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuard } from './shared/guards/auth-guard';
-import { CookieService } from 'ngx-cookie-service';
-import { ResultsComponent } from "./components/results/results.component";
+import { NavComponent } from './components/nav/nav.component';
+import { ErrorNotFoundComponent } from './components/error-not-found/error-not-found.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRadioModule } from '@angular/material/radio';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { FlexLayoutModule } from '@angular/flex-layout'
-import { CarouselModule } from 'primeng/carousel';
-import { PresentationService } from './components/presentation/presentation.service';
-import { QuizService } from './components/quiz/quiz.service';
-
+import { MatIconModule, MatMenuModule, MatToolbarModule, MatRadioModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { ErrorInterceptor } from '../error-interceptor';
+import { MatDialogModule, MatExpansionModule } from '@angular/material';
+import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
+import { PresentationsComponent } from './components/presentations/presentations.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { QuizComponent } from './components/quiz/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BaseLayoutComponent,
-    SummaryComponent,
-    QuizSelectionComponent,
     LoginComponent,
-    NotFoundComponent,
-    AuthLayoutComponent,
-    PresentationComponent,
-    QuizComponent,
-    ResultsComponent,
-
+    NavComponent,
+    ErrorNotFoundComponent,
+    DashboardComponent,
+    HomeComponent,
+    ErrorHandlerComponent,
+    PresentationsComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
     MatFormFieldModule,
-    MatRadioModule,
-    MatButtonToggleModule,
+    MatButtonModule,
+    MatCardModule,
+    FormsModule,
     MatInputModule,
     MatIconModule,
-    MatListModule,
     MatMenuModule,
+    MatToolbarModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    CarouselModule
-
+    HttpClientModule,
+    MatDialogModule,
+    MatExpansionModule,
+    CarouselModule,
+    MatRadioModule
   ],
-  providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-    CookieService,
-    AuthGuard, PresentationService, QuizService
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard,
+  {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorHandlerComponent]
 })
 export class AppModule { }

@@ -6,12 +6,11 @@
 ; Description: NodeQuiz
 ;=============================================
 */
-import { CookieService } from 'ngx-cookie-service';
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../auth.service';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
-import { QuizService } from './quiz.service';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-quiz',
@@ -20,52 +19,57 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class QuizComponent implements OnInit {
 
-  quizName: string;
-  quizzes: any;
-  quiz: any;
-  questions: any = [];
-  question: any = [];
-
   quizId: number;
-  employeeId: number;
-  quizResults: any;
+  quiz: any;
+  // quizQuestions: any = [];
+  q: any = [];
+  a: any = [];
+  question: any;
+  questions: any;
+  score: any = 0;
+  employeeId: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private cookieService: CookieService, private dialog: MatDialog,
-    private quizService: QuizService, private router: Router) {
-      this.quizName = route.snapshot.paramMap.get('name');
-      // this.quizId = parseInt(this.route.snapshot.paramMap.get('quizId'), 10);
-      this.employeeId = parseInt(this.cookieService.get('employeeId'), 10);
-      console.log('Running getQuizzes from component');
-      this.quizService.getQuizzes()
-      .subscribe(res => {
-        this.quizzes = res;
-        console.log(this.quizzes);
-        this.questions = this.quizzes.filter(p => p.name === this.quizName)[0].questions;
-        // this.quiz = this.quizzes.filter(q => q.quizId === this.quizId)[0];
-        console.log(this.questions);
-      })
+  constructor(private activeRoute: ActivatedRoute, private auth: AuthService, private http: HttpClient) {
+
+    this.quizId = parseInt(this.activeRoute.snapshot.paramMap.get('id'))
+
+    this.auth.getQuiz(this.quizId).subscribe(
+      res => {
+        this.quiz = res;
+
+        // this.test()
+
+        // console.log(this.quizQuestions)
+        console.log(this.quiz.quiz)
+
+
+      },
+      err => console.log(err)
+    )
+
   }
 
-  goToQuiz(quizName) {
-    this.quizName = quizName;
-    console.log('The quiz name is ' + this.quizName);
-    this.router.navigate(['/quiz/' + this.quizName]);
-  }
 
-  returnToPresentation(quizName) {
-    this.quizName = quizName;
-    this.router.navigate(['/presentation/' + this.quizName]);
-  }
+  // test() {
+  //   for(let i = 0; i < this.quiz.quiz.questions.length; i++){
+  //     this.quizQuestions.push(this.quiz.quiz.questions[i])
+  //   }
+  // }
 
-  onSubmit(form) {
-    this.quizResults = form;
-    this.quizResults['employeeId'] = this.employeeId; // add the employeeId to the quizResults object
-    this.quizResults['quizId'] = this.quizId; // add the quizId to the quizResults object
+  quizForm(form) {
+    this.q = form;
+    this.q['employeeId'] = this.employeeId;
+    this.q['quizId'] = this.quizId;
+    console.log(this.q)
+    }
 
+  getUser() {
+    this.employeeId = localStorage.getItem('user');
+    console.log(this.employeeId);
   }
 
   ngOnInit() {
-
+    this.getUser()
   }
 
 }

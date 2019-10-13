@@ -7,22 +7,25 @@
 ======================================
 */
 
-
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const QuizSchema = new Schema({
-    quizId: {type: Number},
-    name: {type: String, required: true},
-    questions: [{
-        questionNumber: {type: Number},
-        questionText: {type: String},
-        answers: [{
-            answerLetter: {type: String},
-            answerText: {type: String},
-            isCorrect: {type: Boolean}
-        }]
-    }]
+const answerSchema = mongoose.Schema({
+    id: Number ,
+    answer: { type: String }
 })
 
-module.exports = mongoose.model('Quiz', QuizSchema);
+const questionsSchema = mongoose.Schema({
+    id: Number ,
+    question: String ,
+    correct_answer: Number,
+    question_answers: [answerSchema]
+})
+
+const quizSchema = mongoose.Schema({
+    quizId: String,
+    quiz_name: String ,
+    questions: [questionsSchema]
+}, { collection: 'quizzes' });
+
+
+module.exports = mongoose.model('Quiz', quizSchema);

@@ -1,5 +1,36 @@
 
+.quiz-container {
+  margin: auto;
+  width: 60%;
+  white-space: normal;
+}
 
-input[type="radio"] {
-  vertical-align: top;
+.quiz-h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.quiz-card {
+  box-shadow: 2px 2px 6px 6px rgba(33, 116, 224, 0.541);
+  margin: 25px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+button {
+  margin-bottom: 10px;
+  display: inline-block;
+  min-width: 165px;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+.submit-btn {
+  min-width: 165px;
+  margin-bottom: 50px;
+  display: inline-block;
 }

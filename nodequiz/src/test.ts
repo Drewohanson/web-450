@@ -1,3 +1,11 @@
+/*
+=====================================
+  ; Title: test.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: nodequiz
+======================================
+*/
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/zone-testing';

@@ -1,3 +1,13 @@
+/*
+=====================================
+  ; Title: main.ts
+  ; Author: Drew Hanson
+  ; Date: October 8 2019
+  ; Description: nodequiz
+======================================
+*/
+//
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

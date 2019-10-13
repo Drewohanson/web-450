@@ -1,28 +1,14 @@
-<div style="width: 50%; margin-top: 12%; margin-left: 20%;" fxLayout="column">
-  <mat-card class="mat-elevation-z8">
-      <mat-card-title>Please enter Employee ID</mat-card-title>
-      <mat-card-content>
-          <form [formGroup]="form" (ngSubmit)="login(); form.reset();" #loginForm>
-              <mat-card style="width: 50%; margin: 0 auto;">
-                  <mat-card-content fxLayout="column" fxLayoutGap="10px">
-
-
-
-                      <small *ngIf="errorMessage">{{ errorMessage }}<br/></small>
-                      <small *ngIf="form.controls['employeeId'].hasError('required') && form.controls['employeeId'].touched">employee Id number is a required field</small>
-                      <small *ngIf="form.controls['employeeId'].hasError('pattern') && form.controls['employeeId'].touched">employee Id number must be an Integer value.</small>
-                      <mat-form-field fxFlex>
-                          <input type="text" matInput [formControl]="form.controls['employeeId']" placeholder="1234" />
-                          <mat-hint>Only Numbers</mat-hint>
-                      </mat-form-field>
-
-                  </mat-card-content>
-                  <mat-card-actions>
-                      <button fxFlex mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Submit</button>
-                  </mat-card-actions>
-              </mat-card>
-          </form>
-          <br /><br />
-      </mat-card-content>
+<div class='login-container' and fxLayoutAlign="center">
+  <mat-card class='login-card'>
+      <h1>Welcome to NodeQuiz!</h1>
+      <h3>Please Log in using a valid Employee ID</h3>
+      <form class='form'>
+          <mat-form-field>
+              <input matInput [(ngModel)]='loginUserData.id' type='text' name='id' placeholder='Please enter your employee ID' #id='ngModel' required minlength='4'>
+              <mat-error *ngIf='id.invalid'>Please enter a valid ID</mat-error>
+              <mat-error *ngIf='errorMessage'>{{ errorMessage }}</mat-error>
+          </mat-form-field>
+          <button mat-raised-button color='accent' (click)='loginUser()'>Submit</button>
+      </form>
   </mat-card>
 </div>
