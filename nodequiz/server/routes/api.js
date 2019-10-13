@@ -1,12 +1,12 @@
 
-
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 
 const mongoose = require('mongoose');
 const User = require('../models/users');
-const Quiz = require('../models/quiz')
+const Quiz = require('../models/quiz');
+const QuizResultsData = require('../models/quiz-post');
 
 const connString = 'mongodb+srv://drewohanson12:Ezra0831!@buwebdev-cluster-1-o4yt9.mongodb.net/nodeQuiz?retryWrites=true&w=majority';
 
@@ -24,6 +24,33 @@ router.post('/users', (req, res, next) => {
     })
   })
 
+  // posts quiz results to the database
+  router.post('/post', (req, res, next) => {
+    let quizData = req.body
+    console.log(quizData);
+    const quiz = new QuizResultsData(quizData);
+    quiz.save();
+    res.status(201).json({
+      message: quiz
+    })
+  })
+
+  //retrieves quiz results from the database
+  router.get('/summary/:employeeId', (req, res, next) => {
+    QuizResultsData.find({'employeeId': req.params.employeeId}, (err, results) => {
+        if(err) {
+            console.log(err);
+        } else
+            if(!results) {
+                res.status(401).send('invalid id');
+        } else {
+            res.status(201).json({
+                results: results
+            })
+        }
+        console.log(results);
+    })
+  });
   // api retrieving specific user ID
 router.get('/users/:id', (req, res, next) => {
     User.findOne({'id': req.params.id}, (err, users) => {
@@ -93,6 +120,9 @@ router.get('/users/:id', (req, res, next) => {
       }
     })
   })
+
+
+
 
 
 module.exports = router;

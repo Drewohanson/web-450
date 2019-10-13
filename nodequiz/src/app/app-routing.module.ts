@@ -37,15 +37,15 @@ const routes : Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'quiz/:id', component: QuizComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'summary/:id/:score', component: SummaryComponent,
     canActivate: [AuthGuard]
   },
   {
     path: 'cumulative-summary', component: CumulativeSummaryComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'quiz/:id', component: QuizComponent,
     canActivate: [AuthGuard]
   },
   {
