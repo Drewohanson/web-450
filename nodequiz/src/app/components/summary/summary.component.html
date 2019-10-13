@@ -1,1 +1,11 @@
-<p>cumulative-summary works!</p>
+<div class='dialog-container'>
+  <mat-dialog-content>
+      <h4>Quiz Summary:</h4>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+      <p>Yoour score: {{ score }}% </p>
+      <br/>
+      <button mat-raised-button (click)='onClose()' color='primary'>Confirm</button>
+  </mat-dialog-actions>
+</div>
