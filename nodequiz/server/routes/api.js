@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = require('../models/users');
 const Quiz = require('../models/quiz');
-const QuizResultsData = require('../models/quiz-post');
+
 
 const connString = 'mongodb+srv://drewohanson12:Ezra0831!@buwebdev-cluster-1-o4yt9.mongodb.net/nodeQuiz?retryWrites=true&w=majority';
 
