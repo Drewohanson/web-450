@@ -1,0 +1,23 @@
+<mat-card class="mainCardColor">
+  <mat-card-title>NodeQuiz Learning Portal</mat-card-title>
+  <mat-card-subtitle>Please select one of the following presentation/quiz sets</mat-card-subtitle>
+  <mat-card-content>
+
+    <mat-card class="cardWidth">
+      <button mat-button (click)="goToPresentation('1001')">
+        <div class="align"><h2>2 Pizza Rule</h2> <img src="../../../assets/presentation/1001/1.0.jpg" alt="2 pizza rule" width="150px"></div>
+      </button>
+    </mat-card>
+
+    <mat-card class="cardWidth">
+      <button mat-button (click)="goToPresentation('1002')">
+        <div class="align"><h2>API</h2> <img src="../../../assets/presentation/1002/2.0.jpg" alt="api" width="150px"></div>
+      </button>
+    </mat-card>
+    <mat-card class="cardWidth">
+      <button mat-button (click)="goToPresentation('1003')">
+        <div class="align"><h2>REST</h2> <img src="../../../assets/presentation/1003/3.0.jpg" alt="REST" width="150px"></div>
+      </button>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

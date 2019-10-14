@@ -6,76 +6,82 @@
   ; Description: nodequiz
 ======================================
 */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule} from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AppRoutes } from './app.routing';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { NavComponent } from './components/nav/nav.component';
-import { ErrorNotFoundComponent } from './components/error-not-found/error-not-found.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BaseLayoutComponent } from './shared';
+import { CumulativeSummaryComponent } from './pages/cumulative-summary/cumulative-summary.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthGuard } from './shared/guards/auth.guard';
+import { CookieService } from 'ngx-cookie-service';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule, MatMenuModule, MatToolbarModule, MatRadioModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './components/home/home.component';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth.guard';
-import { ErrorInterceptor } from '../error-interceptor';
-import { MatDialogModule, MatExpansionModule } from '@angular/material';
-import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
-import { PresentationsComponent } from './components/presentations/presentations.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { QuizComponent } from './components/quiz/quiz.component';
-import { SummaryComponent } from './components/summary/summary.component';
-import { CumulativeSummaryComponent } from './components/cumulative-summary/cumulative-summary.component';
+import { CarouselModule } from 'primeng/carousel';
+import { PresentationComponent } from './pages/presentation/presentation.component';
+import { PresentationService } from './pages/presentation/presentation.service';
+import { QuizComponent } from './pages/quiz/quiz.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    NavComponent,
-    ErrorNotFoundComponent,
+    BaseLayoutComponent,
+    CumulativeSummaryComponent,
     DashboardComponent,
-    HomeComponent,
-    ErrorHandlerComponent,
-    PresentationsComponent,
+    LoginComponent,
+    NotFoundComponent,
+    AuthLayoutComponent,
+    PresentationComponent,
     QuizComponent,
-    SummaryComponent,
-    CumulativeSummaryComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCardModule,
+    RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
+    ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatMenuModule,
-    MatToolbarModule,
-    FlexLayoutModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    MatRadioModule,
     MatDialogModule,
-    MatExpansionModule,
-    CarouselModule,
-    MatRadioModule
+    FlexLayoutModule,
+    HttpClientModule,
+    CarouselModule
   ],
-  providers: [AuthService, AuthGuard,
-  {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
-  bootstrap: [AppComponent],
-  entryComponents: [ErrorHandlerComponent, SummaryComponent]
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
+              AuthGuard, CookieService, PresentationService, ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
